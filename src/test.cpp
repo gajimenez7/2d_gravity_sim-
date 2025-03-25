@@ -44,7 +44,19 @@ int main(){
   int initialHeight = 10;
   int bounceHeight = initialHeight;
 
-  Object object(20, 10, 0.8, 0.0, 10, initialHeight);
+  // Object struct values
+  
+  int oMass;
+  float oRad, oRest, oVel, oX, oY;
+
+  oMass = 20;
+  oRad = 10;
+  oRest = 1;
+  oVel = 0.0;
+  oX = 10;
+  oY = initialHeight;
+
+  Object object(oMass, oRad, oRest, oVel, oX, oY);
 
   std::cout << "Object starting at " << object.x << " " << object.y << "\n"<< std::endl;
 
