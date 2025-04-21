@@ -1,21 +1,18 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+#include "model.h"
 #include <string>
 
 struct ObjectController {
-  // Position struct functions
-  void setPos(int x, int y);
+  Object *object;
 
-  int getXPos();
-
-  int getYPos();
+  ObjectController(Object *object) : object(object) {}
 
   // Object struct functions
-  void setObjName(std::string name);
+  void setObjName(std::string &name);
 
-  std::string getObjName();
-
+  std::string getObjName() const;
 
   void setObjMass(int mass);
 

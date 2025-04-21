@@ -1,13 +1,13 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 #include <string>
 
-#include
+#include ""
 
-const int gravity = 9.8;
+const double gravity = 9.8;
 
-int main(){
+int main() {
   // Exit flag
   bool exit = false;
 
@@ -23,8 +23,7 @@ int main(){
 
   view.displayInfo(&object);
 
-  while(!exit){
-
+  while (!exit) {
   }
 
   return 0;

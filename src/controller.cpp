@@ -1,52 +1,17 @@
 #include "controller.h"
+#include "model.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
 #include <string>
 
-struct ObjectController {
-  Pos *pos;
-  Object *object;
-  ObjectView *view;
+// Object mutators and accessors
+void ObjectController::setObjName(std::string &name) { object->name = name; }
 
-  ObjectController(Pos *pos, Object *object, ObjectView *view): pos(pos), object(object), view(view){}
+std::string ObjectController::getObjName() const { return object->name; }
 
-  // Position mutators
-  // Y should not be less than 0, as 0 will be ground
-  void setPos(int x, int y) {
-    pos->x = x;
-    pos->y = y;
-  }
+void ObjectController::setObjMass(int mass) { object->mass = mass; }
 
-  int getXPos() {
-    return pos->x;
-  }
+int ObjectController::getObjMass() { return object->mass; }
 
-  int getYPos() {
-    return pos->y;
-  }
+void ObjectController::setObjPos(int x, int y) { object->pos.set(x, y); }
 
-  // Object mutators and accessors
-  void setObjName(std::string name) {
-    object->name = name;
-  }
-
-  std::string getObjName() {
-    return object->name;
-  }
-
-  void setObjMass(int mass) {
-    object->mass = mass;
-  }
-
-  int getObjMass() {
-    return object->mass;
-  }
-
-  void setObjPos(int x, int y) {
-    object->pos.setPos(x, y);
-  }
-
-  // Add support for multiple objects
-};
+// Add support for multiple objects
