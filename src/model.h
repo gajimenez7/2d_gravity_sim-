@@ -2,6 +2,8 @@
 #define MODEL_H
 
 #include <string>
+#include <unordered_map>
+#include <vector>
 
 // hold position coordinates of a planet
 struct Position {
@@ -11,6 +13,20 @@ struct Position {
   Position(int x = 0, int y = 0) : x(x), y(y) {}
 
   void set(int x, int y);
+};
+
+struct ObjectSystem {
+  // obejct ids
+  std::vector<int> ids;
+  // object names
+  std::vector<std::string> names;
+  // object masses
+  std::vector<int> masses;
+  // object positions
+  std::vector<Position> positions;
+
+  void addObject(int id, const std::string &name, int mass, Position pos);
+  size_t getIndexById(int id) const;
 };
 
 struct Object {

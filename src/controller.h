@@ -3,6 +3,21 @@
 
 #include "model.h"
 #include <string>
+#include <unordered_map>
+
+class SimulationController {
+private:
+  ObjectSystem objSys;
+  std::unordered_map<int, size_t> idToIndex;
+
+public:
+  void addObject(int id, const std::string &name, int mass, Position pos);
+  void setObjectPosition(int id, int x, int y);
+  void setObjectMass(int id, int mass);
+  void updatePhysics();
+
+  void applyGravitationalForce(int id1, int id2);
+};
 
 struct ObjectController {
   Object *object;

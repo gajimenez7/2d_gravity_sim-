@@ -13,5 +13,3 @@ void ObjectController::setObjMass(int mass) { object->mass = mass; }
 int ObjectController::getObjMass() { return object->mass; }
 
 void ObjectController::setObjPos(int x, int y) { object->pos.set(x, y); }
-
-// Add support for multiple objects

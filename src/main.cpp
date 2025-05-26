@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <string>
 
-#include ""
+#include "controller.h"
+#include "model.h"
+#include "view.h"
 
 const double gravity = 9.8;
 
@@ -19,12 +21,14 @@ int main() {
   ObjectView view;
 
   // Controller
-  ObjectController controller(&object->pos, &object, &view);
+  ObjectController controller(&object);
 
-  view.displayInfo(&object);
+  view.displayInfo(object);
 
+  /*
   while (!exit) {
   }
+  */
 
   return 0;
 }

@@ -52,7 +52,7 @@ $(SD)/test.o: $(SD)/test.cpp
 
 # Clean up build files
 clean:
-	rm -f $(OBJS) $(OBJS_TEST) $(TARGET) $(TARGET_TEST)
+	rm -rf *.exe ./src/*.o
 
 # Run the program
 run: all
